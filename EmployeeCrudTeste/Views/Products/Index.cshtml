@@ -1,0 +1,41 @@
+﻿@model List<EmployeeCrudTeste.Models.Domain.Products>
+@{
+}
+
+<h1>Product list</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col">Category</th>
+            <th scope="col">Stock Quantity</th>
+            <th scope="col">Available</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var products in Model)
+        {
+            <tr>
+                <td>@products.Id</td>
+                <td>@products.Name</td>
+                <td>@products.Price</td>
+                <td>@products.Description</td>
+                <td>@products.Category</td>
+                <td>@products.StockQuantity</td>
+                <td>@products.Available</td>
+                <!-- nao funcionou o botao e parei aqui -->
+                <!--<td><a href="Products/View/@products.Id" class="btn btn-primary">Update</a></td>-->
+                <td><a href="Products/Edit/@products.Id" class="btn btn-primary">Update</a></td>
+
+                <td>
+                    <a asp-action="Delete" asp-route-id="@products.Id" class="btn btn-danger">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,36 @@
+﻿@model EmployeeCrudTeste.Models.AddProductViewModel
+@{
+}
+
+
+<h1>New Product</h1>
+
+<form action="Add" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Name" asp-for="Name">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Price</label>
+        <input type="number" class="form-control" id="price" placeholder="Price" asp-for="Price">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Description</label>
+        <input type="text" class="form-control" id="description" placeholder="Description" asp-for="Description">
+    </div>
+
+    <!-- testando dropdown -->
+    <div class="form-group">
+        <label for="exampleInputPassword1">CategoryDrop</label>
+        <select class="form-select" asp-items="Model.TypeProductList" asp-for="SelectedCategory">
+            <option value="NOSELECTEDVALUE" select disabled>-- Select a category --</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">StockQuantity</label>
+        <input type="number" class="form-control" id="stockQuantity" asp-for="StockQuantity">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

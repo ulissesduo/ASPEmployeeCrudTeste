@@ -10,7 +10,9 @@ namespace EmployeeCrudTeste.Data
 
         }
 
-        public DbSet<Teste> Teste { get; set; }
+        public DbSet<Employees> Employees { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Products> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
 
     }
