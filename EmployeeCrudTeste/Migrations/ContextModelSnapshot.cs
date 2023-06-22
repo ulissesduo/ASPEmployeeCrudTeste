@@ -94,6 +94,24 @@ namespace EmployeeCrudTeste.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("EmployeeCrudTeste.Models.Domain.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<Guid>("ClientId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
+
+                    b.ToTable("Orders");
+                });
+
             modelBuilder.Entity("EmployeeCrudTeste.Models.Domain.Products", b =>
                 {
                     b.Property<Guid>("Id")
@@ -116,6 +134,9 @@ namespace EmployeeCrudTeste.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -124,7 +145,37 @@ namespace EmployeeCrudTeste.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("OrderId");
+
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("EmployeeCrudTeste.Models.Domain.Order", b =>
+                {
+                    b.HasOne("EmployeeCrudTeste.Models.Domain.Client", "Client")
+                        .WithMany("Orders")
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+                });
+
+            modelBuilder.Entity("EmployeeCrudTeste.Models.Domain.Products", b =>
+                {
+                    b.HasOne("EmployeeCrudTeste.Models.Domain.Order", null)
+                        .WithMany("Products")
+                        .HasForeignKey("OrderId");
+                });
+
+            modelBuilder.Entity("EmployeeCrudTeste.Models.Domain.Client", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("EmployeeCrudTeste.Models.Domain.Order", b =>
+                {
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

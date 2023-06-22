@@ -19,7 +19,7 @@ namespace EmployeeCrudTeste.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var x = await mvcDbContext.Products.OrderBy(p => p.Name).ToListAsync();
+            var x = await mvcDbContext.Products.ToListAsync();
             return View(x);
         }
 
