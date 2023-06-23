@@ -2,3 +2,12 @@
 @{
 }
 <h1>teste clients buy page</h1>
+
+
+<form method="post" action="/Client/BuyProduct">
+    <!-- Other form fields -->
+
+    <input type="hidden" name="clientId" value="@Model.Id" />
+
+    <button type="submit">Buy Product</button>
+</form>

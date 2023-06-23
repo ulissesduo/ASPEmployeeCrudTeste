@@ -1,9 +1,10 @@
 ﻿using EmployeeCrudTeste.Models.Domain;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeCrudTeste.Data
 {
-    public class Context : DbContext
+    public class Context : IdentityDbContext
     {
         public Context(DbContextOptions options) : base(options)
         {

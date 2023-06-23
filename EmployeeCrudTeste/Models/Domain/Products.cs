@@ -22,5 +22,6 @@ namespace EmployeeCrudTeste.Models.Domain
         public int StockQuantity { get; set; }
 
         public bool Available { get; set; }
+        public Guid ClientId { get; set; }
     }
 }

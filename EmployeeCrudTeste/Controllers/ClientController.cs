@@ -12,15 +12,18 @@ namespace EmployeeCrudTeste.Controllers
         {
             this.mvcDbContext = mvcDbContext;
         }
+        /*
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(Guid clientId)
         {
-            // Retrieve the client or perform any necessary checks
-            
+            var client = mvcDbContext.Clients.FirstOrDefault(c => c.Id == clientId);
+
+            if (client == null)
+                return NotFound();
 
             // Pass the client ID as the model to the view
-            return View();
+            return View(clientId);
         }
 
 
@@ -67,7 +70,7 @@ namespace EmployeeCrudTeste.Controllers
             // Generate a random number between 1000 and 9999
             var random = new Random();
             return random.Next(1000, 10000);
-        }
+        }*/
     }
 
 }
