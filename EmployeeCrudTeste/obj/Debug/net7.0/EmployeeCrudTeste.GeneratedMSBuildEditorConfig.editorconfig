@@ -16,10 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\uliss\source\repos\EmployeeCrudTeste\EmployeeCrudTeste
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/uliss/source/repos/EmployeeCrudTeste/EmployeeCrudTeste/Views/Client/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/uliss/source/repos/EmployeeCrudTeste/EmployeeCrudTeste/Views/Employee/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
