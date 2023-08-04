@@ -17,6 +17,8 @@ namespace EmployeeCrudTeste.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
 
+        public DbSet<SalesLeadEntity> SalesEntity { get; set; }
+
 
     }
 }
